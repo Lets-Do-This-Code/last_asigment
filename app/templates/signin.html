@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Signin</h1>
+    <div class="sinin_box" >
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p class="emailcom">
+            {{ form.email1.label }}<br>
+            {{ form.email1(size=32) }}<br>
+            {% for error in form.email1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p class="paskeycom">
+            {{ form.paskey.label }}<br>
+            {{ form.paskey(size=32) }}<br>
+            {% for error in form.paskey.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        <div class="rembar">
+        <p>{{ form.remember_me() }} 
+        {{ form.remember_me.label }}</p>
+        <p>{{ form.submit1() }}</p>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+{% endblock %}
